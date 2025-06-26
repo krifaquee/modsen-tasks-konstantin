@@ -50,11 +50,14 @@ android {
 }
 
 dependencies {
+<<<<<<< task-1-1
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
     implementation ("com.squareup.moshi:moshi-kotlin:1.14.0")
+=======
+>>>>>>> main
     implementation ("io.insert-koin:koin-android:3.4.0")
     implementation ("io.insert-koin:koin-androidx-compose:3.4.0")
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
@@ -65,7 +68,10 @@ dependencies {
     implementation("androidx.activity:activity-compose")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx")
     implementation("androidx.core:core-ktx")
+<<<<<<< task-1-1
     implementation("com.google.android.gms:play-services-gcm:17.0.0")
+=======
+>>>>>>> main
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")

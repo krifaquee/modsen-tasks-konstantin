@@ -21,12 +21,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+<<<<<<< task-1-1
 import org.koin.androidx.compose.koinViewModel
+=======
+import org.koin.androidx.compose.getViewModel
+>>>>>>> main
 
 @Composable
 fun LoginScreen(
     navController: NavController,
+<<<<<<< task-1-1
     viewModel: LoginViewModel = koinViewModel()
+=======
+    viewModel: LoginViewModel = getViewModel()
+>>>>>>> main
 ) {
     val state by viewModel.state.collectAsState()
     val context = LocalContext.current
