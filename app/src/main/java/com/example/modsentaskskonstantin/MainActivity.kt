@@ -3,44 +3,49 @@ package com.example.modsentaskskonstantin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.modsentaskskonstantin.ui.theme.ModsenTasksKonstantinTheme
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.modsentaskskonstantin.ui.login.HomeScreen
+import com.example.modsentaskskonstantin.ui.login.LoginScreen
+import com.example.modsentaskskonstantin.ui.posts.PostScreen
+import com.example.modsentaskskonstantin.ui.tasks.TaskListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ModsenTasksKonstantinTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+            MaterialTheme {
+                Surface {
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = "taskList"
+                    ) {
+                        composable("login") {
+                            LoginScreen(navController)
+                        }
+                        composable("home") {
+                            HomeScreen()
+                        }
+                        composable("taskList") {
+                            TaskListScreen(navController)
+                        }
+                        composable("posts") {
+                            PostScreen()
+                        }
+                        composable(
+                            "taskDetail/{taskId}",
+                            arguments = listOf(navArgument("taskId") { type = NavType.StringType })
+                        ) {
+                        }
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ModsenTasksKonstantinTheme {
-        Greeting("Android")
     }
 }
