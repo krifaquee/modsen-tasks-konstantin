@@ -1,7 +1,6 @@
 package com.example.modsentaskskonstantin.data
 
 
-import com.example.modsentaskskonstantin.domain.model.TaskDomainModel
 import com.example.modsentaskskonstantin.domain.repository.ITaskRepository
 import kotlinx.coroutines.delay
 
@@ -11,7 +10,6 @@ class TaskRepositoryImpl : ITaskRepository {
         return listOf(
             TaskDomainModel(id = "1", title = "Задание №1"),
             TaskDomainModel(id = "2", title = "Задание №2")
-
         )
     }
 }

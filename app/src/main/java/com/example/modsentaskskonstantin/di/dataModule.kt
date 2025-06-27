@@ -12,5 +12,4 @@ val dataModule = module {
     single<ITaskRepository> { TaskRepositoryImpl() }
     single<IAuthRepository> { AuthRepositoryImpl() }
     single<IPostRepository> { PostRepositoryImpl(get()) }
-
 }

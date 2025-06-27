@@ -1,6 +1,5 @@
 package com.example.modsentaskskonstantin.data.auth
 
-
 import com.example.modsentaskskonstantin.domain.exception.AuthException
 import com.example.modsentaskskonstantin.domain.repository.IAuthRepository
 import kotlinx.coroutines.delay

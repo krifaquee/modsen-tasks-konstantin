@@ -27,7 +27,6 @@ import org.koin.androidx.compose.koinViewModel
 fun LoginScreen(
     navController: NavController,
     viewModel: LoginViewModel = koinViewModel()
-
 ) {
     val state by viewModel.state.collectAsState()
     val context = LocalContext.current

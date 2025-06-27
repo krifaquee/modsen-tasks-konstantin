@@ -6,7 +6,6 @@ import kotlin.jvm.Throws
 
 class LoginUseCase (
     private val repository: IAuthRepository
-
 ) {
     @Throws(AuthException::class)
     suspend operator fun invoke(login: String, password: String) {
