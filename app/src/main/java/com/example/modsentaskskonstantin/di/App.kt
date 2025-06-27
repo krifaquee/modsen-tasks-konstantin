@@ -9,11 +9,7 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-<<<<<<< task-1-1
             modules(listOf(dataModule, domainModule, uiModule, retrofitModule()))
-=======
-            modules(listOf(dataModule, domainModule, uiModule))
->>>>>>> main
         }
     }
 }

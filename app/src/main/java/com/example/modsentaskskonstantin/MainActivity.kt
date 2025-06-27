@@ -12,11 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.modsentaskskonstantin.ui.login.HomeScreen
 import com.example.modsentaskskonstantin.ui.login.LoginScreen
-<<<<<<< task-1-1
 import com.example.modsentaskskonstantin.ui.posts.PostScreen
-=======
-import com.example.modsentaskskonstantin.ui.tasks.TaskDetailScreen
->>>>>>> main
 import com.example.modsentaskskonstantin.ui.tasks.TaskListScreen
 
 class MainActivity : ComponentActivity() {
@@ -39,7 +35,6 @@ class MainActivity : ComponentActivity() {
                         composable("taskList") {
                             TaskListScreen(navController)
                         }
-<<<<<<< task-1-1
                         composable("posts") {
                             PostScreen()
                         }
@@ -47,14 +42,6 @@ class MainActivity : ComponentActivity() {
                             "taskDetail/{taskId}",
                             arguments = listOf(navArgument("taskId") { type = NavType.StringType })
                         ) {
-=======
-                        composable(
-                            "taskDetail/{taskId}",
-                            arguments = listOf(navArgument("taskId") { type = NavType.StringType })
-                        ) { backStackEntry ->
-                            val taskId = backStackEntry.arguments?.getString("taskId") ?: ""
-                            TaskDetailScreen(taskId)
->>>>>>> main
                         }
                     }
                 }

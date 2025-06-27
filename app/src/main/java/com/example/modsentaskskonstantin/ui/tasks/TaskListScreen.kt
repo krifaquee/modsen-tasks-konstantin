@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-<<<<<<< task-1-1
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -16,24 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import org.koin.androidx.compose.koinViewModel
-=======
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import org.koin.androidx.compose.getViewModel
->>>>>>> main
 
 @Composable
 fun TaskListScreen(
     navController: NavController,
-<<<<<<< task-1-1
     viewModel: TaskListViewModel = koinViewModel()
 ) {
-    // Собираем список задач из ViewModel
     val tasks = viewModel.tasks.collectAsState(initial = emptyList())
 
     LazyColumn {
@@ -44,10 +31,8 @@ fun TaskListScreen(
                     .padding(horizontal = 16.dp, vertical = 8.dp)
                     .clickable {
                         if (task.id == "2") {
-                            // Задание №2 — экран со списком постов
                             navController.navigate("posts")
                         } else {
-                            // Задание №1 — экран деталей задачи
                             navController.navigate("login")
                         }
                     },
@@ -62,23 +47,3 @@ fun TaskListScreen(
         }
     }
 }
-=======
-    viewModel: TaskListViewModel = getViewModel()
-) {
-    val tasks by viewModel.tasks.collectAsState()
-
-    LazyColumn {
-        items(tasks) { task ->
-            Text(
-                text = task.title,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable {
-                        navController.navigate("login")
-                    }
-                    .padding(16.dp)
-            )
-        }
-    }
-}
->>>>>>> main
