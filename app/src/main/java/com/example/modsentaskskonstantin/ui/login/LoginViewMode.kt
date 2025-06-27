@@ -47,7 +47,6 @@ class LoginViewModel(
 
     private fun performLogin() = viewModelScope.launch {
         reduce { copy(isLoading = true) }
-
         try {
             loginUseCase(state.value.login, state.value.password)
             _events.emit(LoginEvent.NavigateToHome)
