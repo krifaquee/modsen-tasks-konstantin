@@ -1,10 +1,11 @@
 package com.example.modsentaskskonstantin.domain.usecase
 
-import com.example.modsentaskskonstantin.domain.model.Task
-import com.example.modsentaskskonstantin.domain.repository.TaskRepository
+
+import com.example.modsentaskskonstantin.domain.model.TaskDomainModel
+import com.example.modsentaskskonstantin.domain.repository.ITaskRepository
 
 class GetTasksUseCase(
-    private val repo: TaskRepository
+    private val repo: ITaskRepository
 ) {
-    suspend operator fun invoke(): List<Task> = repo.getAllTasks()
+    suspend operator fun invoke(): List<TaskDomainModel> = repo.getAllTasks()
 }

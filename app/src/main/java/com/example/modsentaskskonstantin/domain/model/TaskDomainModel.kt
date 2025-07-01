@@ -1,6 +1,6 @@
 package com.example.modsentaskskonstantin.domain.model
 
-data class Task (
+data class TaskDomainModel (
     val id: String,
     val title: String
 )
