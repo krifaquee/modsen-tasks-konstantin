@@ -15,7 +15,9 @@ class AuthRepositoryImpl : IAuthRepository {
 
         // проверка комбинации
         if (validCredentials.none { it.first == login && it.second == password }) {
-            throw AuthException("Неверный логин или пароль")
+            if (validCredentials.none { it.first == login && it.second == password }) {
+                throw AuthException("Неверный логин или пароль")
+            }
         }
     }
 }

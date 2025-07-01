@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
                         composable("taskList") {
                             TaskListScreen(navController)
                         }
+
                         composable("posts") {
                             PostScreen()
                         }

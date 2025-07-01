@@ -2,6 +2,7 @@ package com.example.modsentaskskonstantin.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+
 import com.example.modsentaskskonstantin.domain.exception.AuthException
 import com.example.modsentaskskonstantin.domain.usecase.LoginUseCase
 import com.example.modsentaskskonstantin.ui.utils.SingleFlowEvent
@@ -45,6 +46,7 @@ class LoginViewModel(
         }
     }
 
+
     private fun performLogin() = viewModelScope.launch {
         reduce { copy(isLoading = true) }
         try {
@@ -53,6 +55,7 @@ class LoginViewModel(
         } catch (e: AuthException) {
             _events.emit(LoginEvent.ShowError(e.message ?: "Ошибка входа"))
         } finally {
+
             reduce { copy(isLoading = false) }
         }
     }
